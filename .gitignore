@@ -1,9 +1,34 @@
-.idea
-venv/
-__pycache__
-test.py
-post.html
-all.html
+# PyCharm
+.idea/
+
+# Environments
 .env
-.pytest_cache
-example/
+.venv
+env/
+venv/
+venv_wsl/
+ENV/
+env.bak/
+venv.bak/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# Scrapy stuff:
+.scrapy
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class

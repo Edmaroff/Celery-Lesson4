@@ -9,3 +9,7 @@
 [Задание](https://github.com/Edmaroff/Celery-Lesson4/blob/main/initial_task.md)  
 
 ---
+## Запуск программы:
+```shell
+docker-compose up
+```

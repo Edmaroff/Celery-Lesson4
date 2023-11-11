@@ -1,0 +1,47 @@
+version: '3.1'
+
+networks:
+  dev_network:
+
+services:
+  redis:
+    image: redis:7.0.0-alpine3.15
+    ports:
+      - "6379:6379"
+    networks:
+      dev_network:
+        aliases:
+          - db-redis
+
+  celery:
+    build:
+      context: .
+      dockerfile: Dockerfile.celery
+    environment:
+      BACKEND: ${BACKEND}
+      BROKER: ${BROKER}
+    container_name: celery
+    depends_on:
+      - redis
+    networks:
+      dev_network:
+    volumes:
+      - ./src:/src
+
+  app:
+    build:
+      context: .
+    ports:
+      - "5000:5000"
+    environment:
+      BACKEND: ${BACKEND}
+      BROKER: ${BROKER}
+    container_name: app
+    depends_on:
+      - celery
+    networks:
+      dev_network:
+        aliases:
+          - flask
+    volumes:
+      - ./src:/src

@@ -1,0 +1,19 @@
+net_example_min
+net_example_pro
+initial_task.md
+README.md
+.gitignore
+
+# Environments
+venv_wsl
+.env
+.venv
+env/
+venv/
+venv_wsl/
+ENV/
+env.bak/
+venv.bak/
+
+# PyCharm
+.idea/

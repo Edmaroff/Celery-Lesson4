@@ -1,0 +1,1 @@
+celery -A celery_app.my_celery_server worker --loglevel=info
